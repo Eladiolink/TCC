@@ -1,27 +1,63 @@
-# tcc-template-ccomp-paralelo
-Template para TCC para curso de Ciência da computação da UNIVASF campus Salgueiro
+Perfeito! Vou criar um **README.md enxuto**, focado apenas no **Makefile** que você vai usar para compilar, limpar arquivos auxiliares e limpar tudo, sem mostrar o comando direto do LaTeX/latexmk.
 
-> :warning: Estão versão não é oficial
+---
 
-O documento foi criado tendo como base o [template da UFSC](https://www.overleaf.com/latex/templates/template-trabalho-de-conclusao-de-curso-ufsc-a4/fptzhfwsndsz).
+```markdown
+# Projeto de TCC em LaTeX
 
-# Compilação
+Este projeto é um Trabalho de Conclusão de Curso (TCC) modularizado em LaTeX, utilizando a classe **abnTeX2**. O projeto possui capítulos, referências, glossário e índice remissivo.
 
-Para compilar o projeto instale as dependências:
- - TeX Live (eg: `sudo apt install texlive-full`)
- - latexmk (eg: `sudo apt install latexmk`)
+---
 
-Utilizar a pacote `texlive-full` é a solução mais fácil, porém é um pacote grande, é possível tentar fazer uma instalação mais customizada, com apenas as dependências necessárias. Caso queira iniciar com uma instalação customizada, sugiro iniciar com os seguintes pacotes:
+## Estrutura do Projeto
 
-```sh
-sudo apt install texlive
-sudo apt install texlive-publishers texlive-lang-portuguese texlive-latex-extra texlive-fonts-recommended
-sudo apt install texlive-bibtex-extra biber
 ```
 
-Com dependências instaladas, execute para compilar todo o projeto e gerar o arquivo `main.pdf`:
+.
+├── aftertext/       # Apêndices, anexos, referências
+├── beforetext/      # Elementos pré-textuais (capa, folha de rosto, resumos)
+├── chapters/        # Capítulos do TCC
+├── images/          # Imagens usadas no projeto
+├── setup/           # Arquivos de configuração de estilo
+├── tabelas/         # Tabelas externas, se houver
+├── .gitignore
+├── LICENSE
+├── main.bbl          # Arquivo de bibliografia gerado
+├── main.loq          # Arquivo de glossário/índice
+├── main.pdf          # PDF gerado
+├── main.tex          # Arquivo principal
+├── Makefile
+└── README.md
 
-```sh
-latexmk -pdf
 ```
 
+---
+
+## Makefile
+
+O projeto já possui um **Makefile** que facilita a compilação e limpeza dos arquivos auxiliares.  
+
+### Comandos disponíveis
+
+| Comando        | O que faz |
+|----------------|-----------|
+| `make`         | Compila o projeto e gera o PDF completo |
+| `make clean`   | Remove arquivos auxiliares de compilação (mantém PDF) |
+| `make cleanall`| Remove todos os arquivos gerados, incluindo PDF |
+
+> Basta rodar os comandos na raiz do projeto.
+
+---
+
+## Observações
+
+- Capítulos devem ser incluídos no `main.tex` usando `\include{chapters/...}`.  
+- Subpartes menores dentro de capítulos devem usar `\input{...}`.  
+- O Makefile já cuida de **bibliografia, glossário e índices** automaticamente.
+```
+
+---
+
+Se você quiser, posso criar **uma versão do README já com o Makefile completo embutido**, mostrando o código do Makefile dentro do README para que qualquer pessoa possa copiar e usar direto.
+
+Quer que eu faça isso?
