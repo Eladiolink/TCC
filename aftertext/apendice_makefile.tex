@@ -1,0 +1,56 @@
+\chapter{Compilação utilizando \code{Makefile}}\label{makefile}
+
+Este apêndice apresenta o Código \ref{makefile_quadro}, onde há um exemplo de arquivo no formato \code{Makefile} utilizado para realizar compilação para WebAssembly dos algoritmos do PolyBench/C. Este exemplo é utilizado para compilar o algoritmo \code{atax} do PolyBench/C, no entanto, é gerado automaticamente arquivos semelhantes para compilar os outros algoritmos presentes no \textit{benchmark}.
+
+Este arquivo foi gerado automaticamente por um \textit{script} responsável por emitir um \code{Makefile} para cada algoritmo. Esse \textit{script} pode ser visto no endereço \href{https://github.com/raulpy271/polybench-c-wasm/blob/main/wasm-makefile-gen.py}{github.com/raulpy271/polybench-c-wasm/blob/main/wasm-makefile-gen.py}. Ademais, os parâmetros de compilação utilizados no Código \ref{makefile_quadro} são descritos na seção.
+
+\begin{quadro}
+\caption{Exemplo de arquivo \code{Makefile} para compilação do algoritmo \code{atax}\label{makefile_quadro}}
+\begin{lstlisting}[tabsize=2, basicstyle=\ttfamily\tiny]
+CHEERP=/opt/cheerp/bin/clang
+EMCC=emcc
+DATASET_SIZE=MEDIUM_DATASET
+CHEERP_FLAGS=-O2 -cheerp-pretty-code -target cheerp-wasm \
+	-cheerp-linear-heap-size=2000 -cheerp-make-module=es6
+EMCC_FLAGS=-O2 --minify 0 -sINITIAL_MEMORY=1114112 -sALLOW_MEMORY_GROWTH \
+	-sMAXIMUM_MEMORY=$$((2000 * 1024 * 1024))
+POLYBENCH_FLAGS=-DPOLYBENCH_TIME -D$(DATASET_SIZE)
+
+.PHONY: all clean
+
+all: atax_cheerp.mjs atax_cheerp.html atax_emscripten.mjs atax_emscripten.html
+
+atax_cheerp.wasm atax_cheerp.mjs: atax.c atax.h
+	$(CHEERP) $(CHEERP_FLAGS) $(POLYBENCH_FLAGS) \
+		-I /home/raul/ccicomp/tcc/polybench-c-4.2.1-beta/utilities -I . \
+        /home/raul/ccicomp/tcc/polybench-c-4.2.1-beta/utilities/polybench.c atax.c \
+		-o atax_cheerp.mjs
+	cat /home/raul/ccicomp/tcc/polybench-c-4.2.1-beta/utilities/cheerp_capture_time.js >> atax_cheerp.mjs
+	# Store initial size of the heap
+	sed -E -i '/function\s+__start\s*\(/a initial_memory = __heap.byteLength;' atax_cheerp.mjs
+	# Store final size of the heap and return result
+	sed -E -i \
+		'/^\s*__start\s*\(\s*\)/a memory_used = __heap.byteLength; \
+		return {polybench_time, initial_memory, memory_used};' \
+		atax_cheerp.mjs
+
+atax_emscripten.wasm atax_emscripten.mjs: atax.c atax.h
+	$(EMCC) $(EMCC_FLAGS) $(POLYBENCH_FLAGS) \
+		-I /home/raul/ccicomp/tcc/polybench-c-4.2.1-beta/utilities -I . \
+		/home/raul/ccicomp/tcc/polybench-c-4.2.1-beta/utilities/polybench.c atax.c \
+		--post-js /home/raul/ccicomp/tcc/polybench-c-4.2.1-beta/utilities/emscripten_capture_time.js \
+		-o atax_emscripten.mjs
+
+atax_cheerp.html: /home/raul/ccicomp/tcc/polybench-c-4.2.1-beta/utilities/runner.template.html
+	sed 's/$$ALGORITHM/atax/;s/$$COMPILER/cheerp/;s/$$DATASET_SIZE/$(DATASET_SIZE)/' \
+		/home/raul/ccicomp/tcc/polybench-c-4.2.1-beta/utilities/runner.template.html > atax_cheerp.html
+
+atax_emscripten.html: /home/raul/ccicomp/tcc/polybench-c-4.2.1-beta/utilities/runner.template.html
+	sed 's/$$ALGORITHM/atax/;s/$$COMPILER/emscripten/;s/$$DATASET_SIZE/$(DATASET_SIZE)/' \
+		/home/raul/ccicomp/tcc/polybench-c-4.2.1-beta/utilities/runner.template.html > atax_emscripten.html
+
+clean:
+	@ rm -f atax*.mjs atax*.wasm atax*.html
+\end{lstlisting}
+\end{quadro}
+

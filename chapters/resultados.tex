@@ -1,0 +1,23 @@
+
+\chapter{Resultados}\label{resultados}
+
+No capítulo atual, é apresentado tabelas com os dados coletados, os dados abrangem o tamanho do binário emitido pelos compiladores e quantidade de memória utilizada ao executa-los. Ademais, é apresentado estatísticas descritivas sobre o tempo de execução coletado. Por fim, nesse capítulo é analisado os dados apresentados visando responder as questões de pesquisa formuladas no capítulo inicial.
+
+\section{Análise do tempo de execução}
+
+A análise do tempo de execução será realizada de forma semelhante a análise feita na seção anterior, isto é, para cada tripla(algoritmo, navegador e tamanho de entrada) será calculado a razão entre o tempo de execução apresentado pelo Cheerp sobre o tempo apresentado pelo seu rival.
+
+\input{tabelas/benchmark_time_stat_analisys}
+
+\section{Questões de Pesquisa}
+
+Diante da análise realiza, há informações necessárias para responder as questões de pesquisa enunciadas no capítulo inicial. Portanto, a seguir será respondido cada uma delas, utilizando as conclusões obtidas nesse capítulo.
+
+\begin{description}
+    \item[QP01] Qual dos dois compiladores estudados emite um binário com tamanho menor?
+
+    Independente do tamanho da entrada, na média o Cheerp apresentou um binário 10\% menor que o binário emitido pelo Emscripten. Ademais, a variação desse percentual foi muito pequena, logo, em todos os algoritmos utilizados esse resultado se mostrou verdadeiro.
+
+    \item[QP02] Entre os dois, qual produz um binário que utiliza menos memória, considerando o tamanho inicial da memória igual para ambos?
+\end{description}
+
