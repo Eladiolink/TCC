@@ -44,8 +44,9 @@ Esqueça os comandos complexos! Meu **Makefile** cuida da maior parte da mágica
 | `make clean`    | Remove apenas os arquivos auxiliares (PDF fica intacto) |
 | `make cleanall` | Apaga TUDO, inclusive o PDF (para quem gosta de começar do zero) |
 
+> Instale os pacotes necessários em sua incluindo o latexmk.
 > Dica de mestre: rode os comandos na raiz do projeto e veja a magia acontecer! 🪄
-
+> Se vc não usa Unix-like o problema é seu!
 ---
 
 ## 📌 Observações importantes
@@ -55,4 +56,4 @@ Esqueça os comandos complexos! Meu **Makefile** cuida da maior parte da mágica
 - **Makefile**: Ele já se encarrega da bibliografia, glossário e índices. Então relaxe e foque no conteúdo! 😄
 
 ---
-💡 Agora é só me restar escrever, compilar e arrasar no TCC!
+💡 Agora só me restar escrever, compilar e arrasar no TCC!
