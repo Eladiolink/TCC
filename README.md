@@ -1,8 +1,4 @@
-Perfeito! Vou criar um **README.md enxuto**, focado apenas no **Makefile** que você vai usar para compilar, limpar arquivos auxiliares e limpar tudo, sem mostrar o comando direto do LaTeX/latexmk.
 
----
-
-```markdown
 # Projeto de TCC em LaTeX
 
 Este projeto é um Trabalho de Conclusão de Curso (TCC) modularizado em LaTeX, utilizando a classe **abnTeX2**. O projeto possui capítulos, referências, glossário e índice remissivo.
@@ -54,10 +50,3 @@ O projeto já possui um **Makefile** que facilita a compilação e limpeza dos a
 - Capítulos devem ser incluídos no `main.tex` usando `\include{chapters/...}`.  
 - Subpartes menores dentro de capítulos devem usar `\input{...}`.  
 - O Makefile já cuida de **bibliografia, glossário e índices** automaticamente.
-```
-
----
-
-Se você quiser, posso criar **uma versão do README já com o Makefile completo embutido**, mostrando o código do Makefile dentro do README para que qualquer pessoa possa copiar e usar direto.
-
-Quer que eu faça isso?
