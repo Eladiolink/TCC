@@ -1,5 +1,5 @@
 
-# Projeto de TCC em LaTeX
+# Meu TCC
 
 Este projeto é um Trabalho de Conclusão de Curso (TCC) modularizado em LaTeX, utilizando a classe **abnTeX2**. O projeto possui capítulos, referências, glossário e índice remissivo.
 
@@ -37,7 +37,7 @@ O projeto já possui um **Makefile** que facilita a compilação e limpeza dos a
 
 | Comando        | O que faz |
 |----------------|-----------|
-| `make`         | Compila o projeto e gera o PDF completo |
+| `make`         | Compila o projeto e gera o PDF completo e limpa os arquivos auxiliares |
 | `make clean`   | Remove arquivos auxiliares de compilação (mantém PDF) |
 | `make cleanall`| Remove todos os arquivos gerados, incluindo PDF |
 
