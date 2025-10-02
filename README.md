@@ -44,8 +44,8 @@ Esqueça os comandos complexos! Meu **Makefile** cuida da maior parte da mágica
 | `make clean`    | Remove apenas os arquivos auxiliares (PDF fica intacto) |
 | `make cleanall` | Apaga TUDO, inclusive o PDF (para quem gosta de começar do zero) |
 
-> Instale os pacotes necessários em sua incluindo o latexmk.
-> Dica de mestre: rode os comandos na raiz do projeto e veja a magia acontecer! 🪄
+> Instale os pacotes necessários em sua incluindo o latexmk.  
+> Dica de mestre: rode os comandos na raiz do projeto e veja a magia acontecer! 🪄  
 > Se vc não usa Unix-like o problema é seu!
 ---
 
