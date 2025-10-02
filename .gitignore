@@ -1,0 +1,40 @@
+# Arquivos auxiliares do LaTeX
+*.aux
+*.bbl
+*.blg
+*.bcf
+*.lof
+*.lot
+*.toc
+*.idx
+*.ilg
+*.ind
+*.out
+*.synctex.gz
+*.fdb_latexmk
+*.fls
+*.log
+*.nav
+*.snm
+*.vrb
+*.xdv
+
+# Arquivos de backup
+*~
+*.bak
+*.backup
+
+# Diretórios de saída (caso use -output-directory)
+build/
+out/
+
+# Arquivos temporários do editor
+*.swp
+*.swo
+*.tmp
+
+# Arquivos de glossário
+*.glo
+*.gls
+*.glsdefs
+*.ist
