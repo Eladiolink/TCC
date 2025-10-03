@@ -56,4 +56,4 @@ Esqueça os comandos complexos! Meu **Makefile** cuida da maior parte da mágica
 - **Makefile**: Ele já se encarrega da bibliografia, glossário e índices. Então relaxe e foque no conteúdo! 😄
 
 ---
-💡 Agora só me restar escrever, compilar e arrasar no TCC!
+💡 Agora só me resta termina de escrever, compilar e arrasar no TCC!
