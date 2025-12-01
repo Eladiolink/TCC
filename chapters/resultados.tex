@@ -1,14 +1,17 @@
 
 \chapter{Resultados}\label{resultados}
 
+\setcounter{table}{0}
 
 O presente capítulo tem como propósito apresentar, contextualizar e analisar de maneira sistemática os resultados obtidos a partir do envio das questões aos modelos de linguagem (LLM's) e da subsequente coleta de suas respostas. Busca-se, assim, oferecer uma interpretação rigorosa e fundamentada dos dados produzidos pelos experimentos, evidenciando padrões, discrepâncias e insights relevantes para a compreensão do desempenho dos modelos avaliados. Além disso, este capítulo contribui para o aprofundamento da discussão sobre a eficácia das LLM's em cenários distintos de complexidade, parametrização e áreas do conhecimento, estabelecendo conexões diretas com os objetivos específicos delineados na etapa metodológica deste trabalho.
 
 Para garantir a clareza da exposição e atender aos objetivos propostos, a análise dos resultados foi organizada em quatro etapas principais. Inicialmente, realiza-se a avaliação da taxa de acertos dos modelos ao longo dos anos e em diferentes configurações de temperatura. Em seguida, examina-se a acurácia dos modelos considerando exclusivamente a variação de temperatura. Posteriormente, é conduzida a análise do \textit{recall}, também por temperatura, a fim de observar o comportamento dos modelos na recuperação correta de respostas. Por fim, apresenta-se um heatmap referente à taxa média de erro por área e por modelo, seguido de outros três heatmaps específicos para cada modelo, destinados a ilustrar a acurácia por temperatura e por área do conhecimento.
 
-A seguir, inicia-se a discussão pelos resultados relacionados à taxa de acertos dos modelos ao longo dos anos e das diferentes configurações de temperatura.
 
 \subsection{Taxa de Acerto Por Ano}
+
+A seguir, inicia-se a discussão pelos resultados relacionados à taxa de acertos dos modelos ao longo dos anos e das diferentes configurações de temperatura.
+
 \begin{table}[h!]
 \centering
 \caption{Taxa de acertos dos modelos por ano e temperatura}
@@ -65,6 +68,8 @@ Entretanto, o GPT demonstra maior consistência ao longo da variação das tempe
 % Acuracua total dos modelos
 \subsection{Acurácia por Temperatura}
 
+A Tabela 2 apresenta a acurácia média dos modelos GPT, Gemini (GMN) e DeepSeek (DS) em diferentes níveis de temperatura, variando de 0.0 a 2.0. Os valores estão entre 0 e 1, representando proporções de acerto e não porcentagens. Essa análise permite observar o comportamento de cada modelo diante da variação da temperatura, que influencia o grau de aleatoriedade na geração de respostas.
+
 \begin{table}[h!]
 \centering
 \caption{Acurácia dos modelos por temperatura}
@@ -89,31 +94,6 @@ DS  & 0.82\% & 0.82\% & 0.83\% & 0.82\% & 0.78\% & 0.85\% \\
 \end{tabular}
 \end{table}
 
-% \begin{table}[h!]
-% \centering
-% \caption{Precisão dos modelos por temperatura}
-% \renewcommand{\arraystretch}{1.3}
-% \setlength{\tabcolsep}{10pt}
-% \begin{tabular}{
-%     >{\bfseries}c  % Modelo
-%     c c c c c c    % Temperaturas
-% }
-% \toprule
-% & \multicolumn{6}{c}{\textbf{Temperatura}} \\ 
-% \cmidrule(lr){2-7}
-% \textbf{Modelo} & \textbf{0.0} & \textbf{0.4} & \textbf{0.8} & \textbf{1.2} & \textbf{1.6} & \textbf{2.0} \\ 
-% \midrule
-% % Mod      0 & 0.4      & 0.8      & 1.2      & 1.6      & 2.0
-
-% GPT & 0.83\% & 0.83\% & 0.83\% & 0.83\% & 0.83\% & 0.80\% \\ 
-% GMN & 0.79\% & 0.81\% & 0.83\% & 0.83\% & 0.79\% & 0.84\% \\ 
-% DS  & 0.82\% & 0.82\% & 0.83\% & 0.82\% & 0.76\% & 0.85\% \\  
-% \bottomrule
-% \end{tabular}
-% \end{table}
-
-A Tabela 2 apresenta a acurácia média dos modelos GPT, Gemini (GMN) e DeepSeek (DS) em diferentes níveis de temperatura, variando de 0.0 a 2.0. Os valores estão entre 0 e 1, representando proporções de acerto e não porcentagens. Essa análise permite observar o comportamento de cada modelo diante da variação da temperatura, que influencia o grau de aleatoriedade na geração de respostas.
-
 De forma geral, o GPT apresenta o desempenho mais consistente e elevado entre os três modelos. Sua acurácia permanece praticamente estável em torno de 0.83 em todas as temperaturas, com uma ligeira redução para 0.81 em 2.0. Essa estabilidade indica que o modelo é pouco sensível à variação de temperatura, mantendo boa performance mesmo em condições de maior aleatoriedade.
 
 O Gemini (GMN) apresenta resultados também estáveis, variando entre 0.79 e 0.83. Ele atinge seu melhor desempenho entre as temperaturas 0.8 e 1.2, mas apresenta pequenas quedas em 0.0 e 1.6, o que sugere leve sensibilidade à variação do parâmetro. Apesar disso, o comportamento geral é equilibrado, sem flutuações bruscas.
@@ -130,6 +110,9 @@ Em contraste, os demais modelos apresentaram oscilações significativamente mai
 % ==========================================================================================
 % RECALL
 \subsection{\textit{Recall} Por Temperatura}
+
+A Tabela 3 apresenta o \textit{recall} dos modelos GPT, GMN e DS em diferentes temperaturas, variando de 0,0 a 2,0. Assim como observado na análise de precisão, os valores de \textit{recall} também se mantêm bastante estáveis, indicando que a variação da temperatura exerce pouca influência sobre o desempenho dos modelos nesse aspecto.
+
 \begin{table}[h!]
 \centering
 \caption{\textit{Recall} dos modelos por temperatura}
@@ -154,8 +137,6 @@ DS  & 0.81\% & 0.81\% & 0.82\% & 0.81\% & 0.76\% & 0.83\% \\
 \end{tabular}
 \end{table}
 
-A Tabela 3 apresenta o \textit{recall} dos modelos GPT, GMN e DS em diferentes temperaturas, variando de 0,0 a 2,0. Assim como observado na análise de precisão, os valores de \textit{recall} também se mantêm bastante estáveis, indicando que a variação da temperatura exerce pouca influência sobre o desempenho dos modelos nesse aspecto.
-
 O modelo GPT demonstrou o comportamento mais consistente entre os três, mantendo um \textit{recall} de 0,82\% em todas as temperaturas, com exceção da temperatura 2,0, em que houve uma leve queda para 0,80\%. Esse resultado reforça a estabilidade do GPT, mostrando que ele é pouco afetado por mudanças no parâmetro de temperatura e consegue manter um desempenho previsível e uniforme.
 
 O modelo GMN, por sua vez, apresentou uma leve oscilação. Ele começou com 0,78\% em temperatura 0,0, alcançou 0,83\% em 0,8 e finalizou com o mesmo valor em 2,0. Apesar das pequenas variações, o GMN demonstrou uma tendência positiva em temperaturas mais altas, o que sugere que este modelo pode apresentar um ligeiro ganho de sensibilidade e capacidade de recuperação de informações conforme a temperatura aumenta.
@@ -178,8 +159,9 @@ No entanto, os modelos GMN e DS mostram-se mais voláteis e sensíveis à varia�
 % \end{figure}
 
 % ====================================================================================================
-\subsection{HeatMaps}
+\subsection{Análise por área do conhecimento}
 
+A seguir, apresentamos os resultados estratificados por áreas de conteúdo, sem a segregação por ano de prova. Essa abordagem agregada busca isolar a variável temática, possibilitando avaliar se determinados modelos possuem maior aptidão para componentes específicos de Ciência da Computação.
 \begin{figure}[h!]
   \centering
   \makebox[\textwidth][c]{\includegraphics[width=1\textwidth]{images/heatmap_GPT.png}}
@@ -188,7 +170,7 @@ No entanto, os modelos GMN e DS mostram-se mais voláteis e sensíveis à varia�
 \end{figure}
 
 
-O heatmap mostra que o modelo GPT apresenta um desempenho alto na maioria das áreas de conhecimento avaliadas. Campos como Análise de Algoritmos, Arquitetura e Organização de Computadores, Banco de Dados, Conhecimento Geral, Construção de Compiladores, Inteligência Artificial, Redes de Computadores e Sistemas Distribuídos mantêm acurácia de 100\% em praticamente todas as temperaturas, isso indica que o modelo possui domínio consistente desses assuntos. Essa estabilidade sugere que são áreas amplamente cobertas nos dados de treinamento e com estruturas conceituais bem definidas.
+Na figura 1, está presente o heatmap mostra que o modelo GPT apresenta um desempenho alto na maioria das áreas de conhecimento avaliadas. Campos como Análise de Algoritmos, Arquitetura e Organização de Computadores, Banco de Dados, Conhecimento Geral, Construção de Compiladores, Inteligência Artificial, Redes de Computadores e Sistemas Distribuídos mantêm acurácia de 100\% em praticamente todas as temperaturas, isso indica que o modelo possui domínio consistente desses assuntos. Essa estabilidade sugere que são áreas amplamente cobertas nos dados de treinamento e com estruturas conceituais bem definidas.
 
 No entanto, algumas áreas apresentam desempenho elevado, mas não perfeito. Engenharia de Software se mantém estável com cerca de 88,89\% de acurácia, enquanto Segurança da Informação permanece em 66,67\%. Esses valores mostram que o modelo compreende bem esses domínios, porém ainda há espaço para imprecisões, possivelmente devido à natureza interpretativa ou multidimensional dessas áreas. Porém Teoria da Computação apresenta: acurácia de 77,78\% em temperaturas baixas e intermediárias, mas melhora para 88,89\% quando a temperatura chega a 2.0, sugerindo que um pouco mais de variabilidade e criatividade nas respostas pode, de fato, auxiliar em perguntas mais conceituais.
 
@@ -204,7 +186,7 @@ Algumas áreas, no entanto, demonstram fragilidades claras. Fundamentos Matemát
 \end{figure}
 
 
-O heatmap de acurácia do modelo Gemini revela um comportamento bastante consistente em várias áreas de conhecimento, mas também apresenta pontos de instabilidade marcantes, especialmente em baixas temperaturas. A maioria das disciplinas apresenta desempenho excelente, com acurácia de 100\% em praticamente todas as faixas de temperatura incluindo Banco de Dados, Construção de Compiladores, Inteligência Artificial, Redes de Computadores, Segurança da Informação e Sistemas Distribuídos. Esse padrão mostra que o Gemini domina bem esses temas e mantém respostas corretas mesmo quando o nível de aleatoriedade é aumentado. Esses resultados sugerem que o modelo possui uma base sólida e confiável nas áreas mais estruturadas e amplamente abordadas em ciência da computação.
+Na figura 2, está presente o heatmap de acurácia do modelo Gemini revela um comportamento bastante consistente em várias áreas de conhecimento, mas também apresenta pontos de instabilidade marcantes, especialmente em baixas temperaturas. A maioria das disciplinas apresenta desempenho excelente, com acurácia de 100\% em praticamente todas as faixas de temperatura incluindo Banco de Dados, Construção de Compiladores, Inteligência Artificial, Redes de Computadores, Segurança da Informação e Sistemas Distribuídos. Esse padrão mostra que o Gemini domina bem esses temas e mantém respostas corretas mesmo quando o nível de aleatoriedade é aumentado. Esses resultados sugerem que o modelo possui uma base sólida e confiável nas áreas mais estruturadas e amplamente abordadas em ciência da computação.
 
 Algumas áreas apresentam acurácia alta, mas não perfeita, mantendo valores estáveis e confiáveis ao longo das temperaturas. É o caso de Engenharia de Software, que permanece em 88,89\%, e de Teoria da Computação, que varia entre 77,78\% e 88,89\%, mostrando leve sensibilidade à variação da temperatura, mas ainda demonstrando boa performance geral. O Conhecimento Geral também se destaca com uma acurácia próxima de 93\%, com uma pequena queda na temperatura 1.6. Esses comportamentos sugerem que o modelo compreende bem esses domínios, mas eles ainda possuem elementos interpretativos, em que pequenas variações de temperatura podem influenciar o resultado.
 
@@ -218,14 +200,14 @@ No entanto, algumas áreas se destacam pela baixa acurácia ou por variações a
   \label{Heatmap por área de conhecimento}
 \end{figure}
 
-O heatmap de acurácia do DeepSeek revela um desempenho relevante na maioria das áreas de conhecimento, mas também apresenta pontos de oscilação relevantes conforme a temperatura aumenta. Em grande parte das disciplinas como Banco de Dados, Construção de Compiladores, Inteligência Artificial, Redes de Computadores, Segurança da Informação e Sistemas Distribuídos; o modelo mantém uma acurácia de 100\% em todas as temperaturas, demonstrando domínio sólido nessas áreas, mesmo com variações na aleatoriedade das respostas.
+Por fim na figura 3, está presente o heatmap de acurácia do DeepSeek revela um desempenho relevante na maioria das áreas de conhecimento, mas também apresenta pontos de oscilação relevantes conforme a temperatura aumenta. Em grande parte das disciplinas como Banco de Dados, Construção de Compiladores, Inteligência Artificial, Redes de Computadores, Segurança da Informação e Sistemas Distribuídos; o modelo mantém uma acurácia de 100\% em todas as temperaturas, demonstrando domínio sólido nessas áreas, mesmo com variações na aleatoriedade das respostas.
 
 Assim como o GPT e o Gemini, em algumas áreas mantêm desempenho elevado, mas não perfeito. Engenharia de Software e Teoria da Computação apresentam acurácia estável de cerca de 77,78\%, enquanto Estrutura de Dados se mantém em 75\% até a temperatura 1.6, subindo para 100\% na temperatura 2.0 um comportamento incomum, mas que sugere que respostas um pouco mais criativas ou exploratórias podem ajudar o modelo nessa área específica. Em Fundamentos Matemáticos, apresenta acurácia constante de 80\%, mostrando um desempenho moderadamente forte. Conhecimento Geral sofre uma leve queda em temperaturas mais altas, indo de 86,67\% para 80\%, o que indica sensibilidade moderada à aleatoriedade.
 
 Entretanto, duas áreas chamam atenção por comportamentos instáveis ou baixos. Análise de Algoritmos apresenta uma queda significativa na temperatura 1.6, despencando de 100\% para 66,67\%, embora recupere parcialmente para 83,33\% em 2.0. Esse comportamento sugere que, nessa disciplina, maior aleatoriedade prejudica a precisão do modelo. O caso mais crítico continua sendo Sistemas Operacionais, que apresenta acurácia baixa e praticamente estável, variando entre 42,86\% e 57,14\% dependendo da temperatura. Assim como nos outros modelos comparados, DeepSeek também demonstra fragilidade nessa área, indicando possível lacuna no treinamento ou dificuldade intrínseca do modelo em lidar com perguntas específicas desse domínio.
 %=====================================================================================================
 
-\subsubsection{Conclusão dos Heatmaps}
+\subsubsection{Conclusão da avaliação por área do conhecimento}
 Ao analisar os heatmaps das Figuras 1, 2 e 3, observa-se que existem áreas em que ambos os modelos apresentam elevado desempenho e respondem corretamente de forma consistente. Entre essas áreas de conhecimento destacam-se Bancos de Dados, Construção de Compiladores, Inteligência Artificial, Redes de Computadores e Sistemas Distribuídos. Esse comportamento sugere que, durante o processo de treinamento, os modelos provavelmente foram expostos a um corpus amplo e proporcionalmente semelhante nesses domínios, o que pode explicar a elevada consistência de acertos observada em ambos os cenários.
 
 A baixa acurácia geral observada na categoria de Sistemas Operacionais entre 28\% e57\% indica que essa área apresenta desafios particulares para os modelos, especialmente porque muitas questões dependem de diagramas, visualizações de estados de memória ou operações específicas de hardware, que são de difícil interpretação apenas por meio de texto. Além disso, a própria natureza dos Sistemas Operacionais contribui para essa dificuldade, pois o campo abrange múltiplas implementações e perguntas pouco específicas podem induzir o modelo a adotar um contexto incorreto, comprometendo a precisão das respostas.
