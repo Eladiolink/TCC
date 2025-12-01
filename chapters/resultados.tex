@@ -2,9 +2,9 @@
 \chapter{Resultados}\label{resultados}
 
 
-O presente capítulo tem como propósito apresentar, contextualizar e analisar de maneira sistemática os resultados obtidos a partir do envio das questões aos modelos de linguagem (LLMs) e da subsequente coleta de suas respostas. Busca-se, assim, oferecer uma interpretação rigorosa e fundamentada dos dados produzidos pelos experimentos, evidenciando padrões, discrepâncias e insights relevantes para a compreensão do desempenho dos modelos avaliados. Além disso, este capítulo contribui para o aprofundamento da discussão sobre a eficácia das LLMs em cenários distintos de complexidade, parametrização e áreas do conhecimento, estabelecendo conexões diretas com os objetivos específicos delineados na etapa metodológica deste trabalho.
+O presente capítulo tem como propósito apresentar, contextualizar e analisar de maneira sistemática os resultados obtidos a partir do envio das questões aos modelos de linguagem (LLM's) e da subsequente coleta de suas respostas. Busca-se, assim, oferecer uma interpretação rigorosa e fundamentada dos dados produzidos pelos experimentos, evidenciando padrões, discrepâncias e insights relevantes para a compreensão do desempenho dos modelos avaliados. Além disso, este capítulo contribui para o aprofundamento da discussão sobre a eficácia das LLM's em cenários distintos de complexidade, parametrização e áreas do conhecimento, estabelecendo conexões diretas com os objetivos específicos delineados na etapa metodológica deste trabalho.
 
-Para garantir a clareza da exposição e atender aos objetivos propostos, a análise dos resultados foi organizada em quatro etapas principais. Inicialmente, realiza-se a avaliação da taxa de acertos dos modelos ao longo dos anos e em diferentes configurações de temperatura. Em seguida, examina-se a acurácia dos modelos considerando exclusivamente a variação de temperatura. Posteriormente, é conduzida a análise do recall, também por temperatura, a fim de observar o comportamento dos modelos na recuperação correta de respostas. Por fim, apresenta-se um heatmap referente à taxa média de erro por área e por modelo, seguido de outros três heatmaps específicos para cada modelo, destinados a ilustrar a acurácia por temperatura e por área do conhecimento.
+Para garantir a clareza da exposição e atender aos objetivos propostos, a análise dos resultados foi organizada em quatro etapas principais. Inicialmente, realiza-se a avaliação da taxa de acertos dos modelos ao longo dos anos e em diferentes configurações de temperatura. Em seguida, examina-se a acurácia dos modelos considerando exclusivamente a variação de temperatura. Posteriormente, é conduzida a análise do \textit{recall}, também por temperatura, a fim de observar o comportamento dos modelos na recuperação correta de respostas. Por fim, apresenta-se um heatmap referente à taxa média de erro por área e por modelo, seguido de outros três heatmaps específicos para cada modelo, destinados a ilustrar a acurácia por temperatura e por área do conhecimento.
 
 A seguir, inicia-se a discussão pelos resultados relacionados à taxa de acertos dos modelos ao longo dos anos e das diferentes configurações de temperatura.
 
@@ -29,17 +29,17 @@ A seguir, inicia-se a discussão pelos resultados relacionados à taxa de acerto
 %  Mod &      0 &      0.4 & 0.8      & 1.2      & 1.6      & 2.0
  & GPT & 0.76\% & 0.76\%   & 0.76\%   & 0.76\%   & 0.76\%   & 0.69\% \\ 
  & GMN & 0.72\% & 0.72\%   & 0.76\%   & 0.72\%   & 0.72\%   & 0.76\% \\ 
- & DS  & 0.79\% & 0.79\%   & 0.79\%   & 0.79\%   & 0.76\%   & 0.83\% \\ 
+ & DS  & \textit{0.79\%} & \textit{0.79\%}   & \textit{0.79\%}  & \textit{0.79\%}   & \textit{0.76\%}   & \textit{0.83\%} \\ 
 \midrule
 \multirow{3}{*}{2017} 
 %  Mod &      0 & 0.4      & 0.8      & 1.2      & 1.6      & 2.0
  & GPT & 0.85\% & 0.85\%   & 0.85\%   & 0.85\%   & 0.85\%   & 0.90\% \\ 
- & GMN & 0.95\% & 0.95\%   & 0.95\%   & 1.00\%   & 0.95\%   & 1.00\% \\ 
+ & GMN & \textit{0.95\%} & \textit{0.95\%}   & \textit{0.95\%}   & \textit{1.00\%}   & \textit{0.95\%}   & \textit{1.00\%} \\ 
  & DS  & 0.90\% & 0.90\%   & 0.90\%   & 0.90\%   & 0.85\%   & 1.00\% \\ 
 \midrule
 \multirow{3}{*}{2021} 
 %  Mod & 0      & 0.4      & 0.8      & 1.2      & 1.6      & 2.0
- & GPT & 0.91\% & 0.91\%   & 0.91\%   & 0.91\%   & 0.91\%   & 0.87\% \\ 
+ & GPT & \textit{0.91\%} & \textit{0.91\%}   & \textit{0.91\%}   & \textit{0.91\%}   & \textit{0.91\%}   & \textit{0.87\%} \\ 
  & GMN & 0.74\% & 0.78\%   & 0.83\%   & 0.83\%   & 0.74\%   & 0.78\% \\ 
  & DS  & 0.78\% & 0.78\%   & 0.83\%   & 0.78\%   & 0.74\%   & 0.74\% \\ 
 \bottomrule
@@ -82,7 +82,7 @@ Entretanto, o GPT demonstra maior consistência ao longo da variação das tempe
 \midrule
 % Mod      0 & 0.4      & 0.8      & 1.2      & 1.6      & 2.0
 
-GPT & 0.83\% & 0.83\% & 0.83\% & 0.83\% & 0.83\% & 0.81\% \\ 
+GPT & \textit{0.83\%} & \textit{0.83\%} & \textit{0.83\%} & \textit{0.83\%} & \textit{0.83\%} & \textit{0.81\%} \\ 
 GMN & 0.79\% & 0.81\% & 0.83\% & 0.83\% & 0.79\% & 0.83\% \\ 
 DS  & 0.82\% & 0.82\% & 0.83\% & 0.82\% & 0.78\% & 0.85\% \\  
 \bottomrule
@@ -129,10 +129,10 @@ Em contraste, os demais modelos apresentaram oscilações significativamente mai
 
 % ==========================================================================================
 % RECALL
-\subsection{Recall Por Temperatura}
+\subsection{\textit{Recall} Por Temperatura}
 \begin{table}[h!]
 \centering
-\caption{Recall dos modelos por temperatura}
+\caption{\textit{Recall} dos modelos por temperatura}
 \renewcommand{\arraystretch}{1.3}
 \setlength{\tabcolsep}{10pt}
 
@@ -147,22 +147,22 @@ Em contraste, os demais modelos apresentaram oscilações significativamente mai
 \midrule
 % Mod      0 & 0.4      & 0.8      & 1.2      & 1.6      & 2.0
 
-GPT & 0.82\% & 0.82\% & 0.82\% & 0.82\% & 0.82\% & 0.80\% \\ 
+GPT & \textit{0.82\%} & \textit{0.82\%} & \textit{0.82\%} & \textit{0.82\%} & \textit{0.82\%} & \textit{0.80\%} \\ 
 GMN & 0.78\% & 0.80\% & 0.83\% & 0.82\% & 0.78\% & 0.83\% \\ 
 DS  & 0.81\% & 0.81\% & 0.82\% & 0.81\% & 0.76\% & 0.83\% \\  
 \bottomrule
 \end{tabular}
 \end{table}
 
-A Tabela 3 apresenta o recall dos modelos GPT, GMN e DS em diferentes temperaturas, variando de 0,0 a 2,0. Assim como observado na análise de precisão, os valores de recall também se mantêm bastante estáveis, indicando que a variação da temperatura exerce pouca influência sobre o desempenho dos modelos nesse aspecto.
+A Tabela 3 apresenta o \textit{recall} dos modelos GPT, GMN e DS em diferentes temperaturas, variando de 0,0 a 2,0. Assim como observado na análise de precisão, os valores de \textit{recall} também se mantêm bastante estáveis, indicando que a variação da temperatura exerce pouca influência sobre o desempenho dos modelos nesse aspecto.
 
-O modelo GPT demonstrou o comportamento mais consistente entre os três, mantendo um recall de 0,82\% em todas as temperaturas, com exceção da temperatura 2,0, em que houve uma leve queda para 0,80\%. Esse resultado reforça a estabilidade do GPT, mostrando que ele é pouco afetado por mudanças no parâmetro de temperatura e consegue manter um desempenho previsível e uniforme.
+O modelo GPT demonstrou o comportamento mais consistente entre os três, mantendo um \textit{recall} de 0,82\% em todas as temperaturas, com exceção da temperatura 2,0, em que houve uma leve queda para 0,80\%. Esse resultado reforça a estabilidade do GPT, mostrando que ele é pouco afetado por mudanças no parâmetro de temperatura e consegue manter um desempenho previsível e uniforme.
 
 O modelo GMN, por sua vez, apresentou uma leve oscilação. Ele começou com 0,78\% em temperatura 0,0, alcançou 0,83\% em 0,8 e finalizou com o mesmo valor em 2,0. Apesar das pequenas variações, o GMN demonstrou uma tendência positiva em temperaturas mais altas, o que sugere que este modelo pode apresentar um ligeiro ganho de sensibilidade e capacidade de recuperação de informações conforme a temperatura aumenta.
 
-Já o modelo DS apresentou um comportamento um pouco mais variável. Iniciando com 0,81\%, o recall do DS se manteve estável até a temperatura 1,2, quando apresentou uma pequena queda para 0,76\% em 1,6 e, depois, se recuperou para 0,83\% na temperatura 2,0. Esse padrão indica que o modelo DS, assim como na análise de precisão, é o mais sensível às variações de temperatura, mas pode alcançar melhores resultados em níveis mais elevados.
+Já o modelo DS apresentou um comportamento um pouco mais variável. Iniciando com 0,81\%, o \textit{recall} do DS se manteve estável até a temperatura 1,2, quando apresentou uma pequena queda para 0,76\% em 1,6 e, depois, se recuperou para 0,83\% na temperatura 2,0. Esse padrão indica que o modelo DS, assim como na análise de precisão, é o mais sensível às variações de temperatura, mas pode alcançar melhores resultados em níveis mais elevados.
 
-O recall dos três modelos manteve-se em níveis semelhantes e estáveis, com pequenas flutuações. O GPT se destaca pela constância, o GMN mostra leve melhora em temperaturas mais altas, e o DS apresenta maior variabilidade, mas também potencial de melhor desempenho quando a temperatura é aumentada.
+O \textit{recall} dos três modelos manteve-se em níveis semelhantes e estáveis, com pequenas flutuações. O GPT se destaca pela constância, o GMN mostra leve melhora em temperaturas mais altas, e o DS apresenta maior variabilidade, mas também potencial de melhor desempenho quando a temperatura é aumentada.
 
 O GPT demonstra ser a opção mais robusta e previsível, mantendo um \textit{recall} constante de 0,82\% em praticamente todas as faixas de temperatura, apresentando apenas uma leve redução para 0,80\% no limite superior (temperatura 2,0). Essa estabilidade pode ser atribuída à sua arquitetura \textit{decoder-only}, amplamente otimizada para respostas coerentes mesmo sob maior aleatoriedade, tornando-o especialmente adequado para aplicações que demandam consistência e baixo nível de variabilidade.
 

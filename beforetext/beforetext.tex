@@ -47,12 +47,12 @@
 	\assinatura{\OnehalfSpacing\imprimirorientador \\ Presidente da Banca}
 	%\end{minipage}%
 	\vspace*{\baselineskip}
-	\assinatura{Prof. X Y Z, Me.\\
+	\assinatura{Prof. Marcos Vinicius Bião Cerqueira, Me.\\
 	Avaliador \\
 	\imprimirinstituicao}
 
 	\vspace*{\baselineskip}
-	\assinatura{Prof. X Y Z, Dr.\\
+	\assinatura{Prof. Walter Felipe dos Santos, Dr.\\
 	Avaliador \\
 	\imprimirinstituicao}
 
@@ -105,10 +105,9 @@ Agradeço a meu pai, a minha mãe, a meu cachorro e a minha orientadora.
 \setlength{\absparsep}{18pt} % ajusta o espaçamento dos parágrafos do resumo
 \begin{resumo}
 	\SingleSpacing
-Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+Este trabalho apresenta uma avaliação comparativa do desempenho dos Grandes Modelos de Linguagem (LLM's) GPT, Gemini e DeepSeek na resolução de questões objetivas do Exame Nacional de Desempenho dos Estudantes (ENADE) voltadas aos cursos da área de Computação. Por meio de uma abordagem quantitativa e experimental, a pesquisa utilizou uma plataforma web desenvolvida especificamente para submeter questões de edições anteriores (2014, 2017 e 2021) aos modelos, aplicando variações de temperatura entre 0.0 e 2.0 para analisar a precisão, o recall e a estabilidade das respostas em comparação aos gabaritos oficiais. Os resultados indicaram que, embora os modelos convirjam em desempenho na temperatura 0.8, o GPT consolidou-se como a ferramenta mais robusta e consistente, apresentando baixa sensibilidade a variações de parâmetros, enquanto o Gemini e o DeepSeek demonstraram superioridade em nichos específicos, como Segurança da Informação e Estruturas de Dados, respectivamente, apesar de serem mais instáveis em temperaturas elevadas. Conclui-se que não existe uma LLM universalmente superior para a Computação, mas sim perfis complementares, sendo observada uma limitação comum a todos os modelos na interpretação de questões visuais e diagramáticas, notadamente na área de Sistemas Operacionais
 
-
-	\textbf{Palavras-chave}: WebAssembly. Web. Desempenho. Compiladores. Emscripten. Cheerp.
+	\textbf{Palavras-chave}: Grandes Modelos de Linguagem (LLM). Inteligência Artificial. ENADE. Processamento de Linguagem Natural (PLN). Avaliação Educacional. Ensino de Computação.
 \end{resumo}
 
 % resumo em inglês
@@ -117,10 +116,9 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
 	\begin{otherlanguage*}{english}
 
 
-Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-
+This work presents a comparative evaluation of the performance of the Large Language Models (LLMs) GPT, Gemini, and DeepSeek in solving multiple-choice questions from the National Student Performance Exam (ENADE) aimed at Computing-related undergraduate programs. Through a quantitative and experimental approach, the research employed a web platform developed specifically to submit questions from past editions (2014, 2017, and 2021) to the models, applying temperature variations between 0.0 and 2.0 to analyze accuracy, recall, and response stability in comparison to the official answer keys. The results indicated that although the models converge in performance at a temperature of 0.8, GPT established itself as the most robust and consistent tool, showing low sensitivity to parameter variations, while Gemini and DeepSeek demonstrated superiority in specific niches such as Information Security and Data Structures, respectively despite being more unstable at higher temperatures. It is concluded that there is no universally superior LLM for Computing; instead, the models exhibit complementary profiles, with a limitation shared by all of them in interpreting visual and diagrammatic questions, especially in the area of Operating Systems.
 		
-		\textbf{Keywords}: WebAssembly. Web. Performance. Compilers. Emscripten. Cheerp.
+		\textbf{Keywords}: Large Language Models (LLM's). Artificial Intelligence. ENADE. Natural Language Processing (NLP). Educational Assessment. Computing Education.
 	\end{otherlanguage*}
 \end{resumo}
 
@@ -156,9 +154,9 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
 	% ---
 	% inserir lista de quadros
 	% ---
-	\pdfbookmark[0]{\listofquadrosname}{loq}
-	\listofquadros*
-	\cleardoublepage
+	%\pdfbookmark[0]{\listofquadrosname}{loq}
+	%\listofquadros*
+	%\cleardoublepage
 	% ---
 	
 	% ---
@@ -173,12 +171,13 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
 	% inserir lista de abreviaturas e siglas (devem ser declarados no preambulo)
 	% ---
 	\imprimirlistadesiglas
+	\glsaddall% para garantir que todas as siglas sejam impressas
 	% ---
 	
 	% ---
 	% inserir lista de símbolos (devem ser declarados no preambulo)
 	% ---
-	\imprimirlistadesimbolos
+    %\imprimirlistadesimbolos
 	% ---
 	
 	% ---
